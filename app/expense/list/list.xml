@@ -1,20 +1,18 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page" actionBarHidden="true">
-    <GridLayout rows="*">
-        <ListView items="{{ expenses }}" id="expenses-list" loadMoreItems="loadMoreItems" itemTap="onTap">
-            <ListView.itemTemplate>
-                <DockLayout stretchLastChild="false" class='expense' height="200">
+    <ListView items="{{ expenses }}" id="expenses-list" loadMoreItems="loadMoreItems" itemTap="onTap">
+        <ListView.itemTemplate>
+            <DockLayout stretchLastChild="false" class='expense' height="200">
+                    <StackLayout dock="left" orientation="vertical">
 
-                        <StackLayout dock="left" orientation="vertical">
-                            <Label text='{{name}}' class='expense-name'/>
-                            <Label text="{{readable_timestamp}}"/>
-                        </StackLayout>
+                        <Label text="{{'Expense ' + name}}" class='expense-name'/>
+                        <Label text="{{readable_timestamp}}"/>
 
-                        <Label dock='right' class='expense-amount' text='{{amount}}' style.verticalAlignment="center"/>
+                    </StackLayout>
 
+                    <Label dock='right' class='expense-amount' text='{{amount}}' style.verticalAlignment="center"/>
 
-                </DockLayout>
-            </ListView.itemTemplate>
-        </ListView>
-    </GridLayout>
+            </DockLayout>
+        </ListView.itemTemplate>
+    </ListView>
 </Page>
 
