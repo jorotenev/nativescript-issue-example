@@ -7,7 +7,7 @@ let dialogs = require("ui/dialogs");
 let u = require('underscore');
 
 export class ListExpenseModel extends Observable {
-    
+
     public expenses: ObservableArray<IExpense>;
 
     constructor() {
@@ -61,6 +61,7 @@ export class ListExpenseModel extends Observable {
         for (let i of u.range(oldestID + 1, oldestID + 10)) {
             this.addToObservableArray(i)
         }
+
     }
 
     public isEmpty(): boolean {

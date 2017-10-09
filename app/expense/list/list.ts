@@ -1,15 +1,15 @@
 import {EventData} from "tns-core-modules/data/observable";
 import {ItemEventData, ListView} from "tns-core-modules/ui/list-view";
 import {Page} from "tns-core-modules/ui/page";
-
 import {ListExpenseModel} from "./list-view-model";
 import {IExpense} from "~/models/expense";
+import view = require("ui/core/view");
 
 let listModel = new ListExpenseModel();
 let page: Page;
 
 export function navigatingTo(args: EventData) {
-    page = <Page>args.object;
+    page = <Page> args.object;
     page.bindingContext = listModel;
 }
 
