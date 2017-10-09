@@ -7,21 +7,19 @@ let dialogs = require("ui/dialogs");
 let u = require('underscore');
 
 export class ListExpenseModel extends Observable {
+    
     public expenses: ObservableArray<IExpense>;
 
     constructor() {
         super();
         this.expenses = new ObservableArray([]);
-        this.dummyExpenses()
 
-    }
-
-    private dummyExpenses(): void {
-        for (let i of u.range(1, 2)) {
+        for (let i of u.range(0, 5)) {
             this.addToObservableArray(i)
         }
     }
 
+ 
     /**
      * fake GETing an expense from the server; add it to the observable array of expenses.
      */
@@ -64,7 +62,6 @@ export class ListExpenseModel extends Observable {
             this.addToObservableArray(i)
         }
     }
-
 
     public isEmpty(): boolean {
         return this.expenses.length === 0;
